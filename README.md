@@ -1,10 +1,10 @@
-# LAB - Number
+# LAB - 02 | Code 201
 
-## Project Name
+## Title: About Me
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+Teach us more about you! Build out an “About Me” webpage that quizzes the user on fun facts and gives the user some basic information about who you are and where you came from.
 
-### Author: Student/Group Name
+### Author: Nathan Cox/seattle-201d68
 
 ### Links and Resources
 
