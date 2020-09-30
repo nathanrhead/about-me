@@ -4,6 +4,11 @@
 
 A page about the author that starts with prompts for the visitor to complete, introducing some of the basic elements of JavaScript.
 
+## Features
+
+* A math game where I read your mind.
+* A guessing game where you read my mind.
+
 ### Author: Nathan Cox/seattle-201d68
 
 ### Links and Resources
