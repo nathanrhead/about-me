@@ -28,6 +28,8 @@ User's story 2: As a user, I would like a personalized welcome message so that I
 
 * [submission PR](https://nathanrhead.github.io/about-me/)
 <!-- * Any Links you used as reference -->
+* [to reinstate bullets after the CSS reset](https://stackoverflow.com/questions/55970383/how-do-i-reinstate-list-style-type-bullets-following-a-css-reset)
+* 
 
 ### Reflections and Comments
 
