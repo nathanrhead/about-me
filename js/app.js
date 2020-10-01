@@ -105,9 +105,11 @@ for(var i = 0; i < 5; i++) {
         alert('No, but I\'ll look into that title.');
     }
 }
+alert('These were the possible answers: *Franny and Zooey*, *Crime and Punishment*, *Master and Margarita*.');
+
 var loadPage = userName;
 
-if(userName.toLowerCase() === 'no' || userName.toLowerCase() === 'n' || userName.toLowerCase() === 'nope') {
+if(userName.toLowerCase() === 'no' || userName.toLowerCase() === 'n' || userName.toLowerCase() === 'nope' || userName === '') {
     loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + 'Pat.');
 
 } else {
