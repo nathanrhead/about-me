@@ -23,55 +23,64 @@ function questionOne(){
    } else if(aboutMeQ1 === null || aboutMeQ1 === '' || typeof aboutMeQ1 === 'string') {
     alert('I\'ll tell you anyway: I\'m a twin, but we\'re dizygotic.')
     // console.log('This is the user\'s answer to Q1: ' + aboutMeQ1);
+   }
 }
 
+function questionTwo(){
+   var aboutMeQ2 = prompt('Is my favorite book *One Hundred Years of Solitude*, by Gabriel Garcia Marquez?')
+   if(aboutMeQ2.toLowerCase() === 'yes' || aboutMeQ2.toLowerCase() === 'y' || aboutMeQ2.toLowerCase() === 'yep') {
+       alert('Close! It\'s actually *Nine Stories*, by JD Salinger.'); 
+       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
+   } else if(aboutMeQ2.toLowerCase() === 'no' || aboutMeQ2.toLowerCase() === 'n' || aboutMeQ2.toLowerCase() === 'nope') {
+       alert('You\'re right, that\'s my second favorite book; my first is *Nine Stories*, by JD Salinger.');
+       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
+   } else if(aboutMeQ2 === null || aboutMeQ2 === '' || typeof aboutMeQ2 === 'string') {
+       alert('I\'ll tell you anyway: While I love *One Hundred*, *Nine Stories*, by JD Salinger, is my favorite.')
+       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2);
+   }   
 }
-// var aboutMeQ2 = prompt('Is my favorite book *One Hundred Years of Solitude*, by Gabriel Garcia Marquez?')
-// if(aboutMeQ2.toLowerCase() === 'yes' || aboutMeQ2.toLowerCase() === 'y' || aboutMeQ2.toLowerCase() === 'yep') {
-//     alert('Close! It\'s actually *Nine Stories*, by JD Salinger.'); 
-//     // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
-// } else if(aboutMeQ2.toLowerCase() === 'no' || aboutMeQ2.toLowerCase() === 'n' || aboutMeQ2.toLowerCase() === 'nope') {
-//     alert('You\'re right, that\'s my second favorite book; my first is *Nine Stories*, by JD Salinger.');
-//     // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
-// } else if(aboutMeQ2 === null || aboutMeQ2 === '' || typeof aboutMeQ2 === 'string') {
-//     alert('I\'ll tell you anyway: While I love *One Hundred*, *Nine Stories*, by JD Salinger, is my favorite.')
-//     // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2);
-// }
-// var aboutMeQ3 = prompt('Did I live in St. Petersburg, Russia?')
-// if(aboutMeQ3.toLowerCase() === 'yes' || aboutMeQ3.toLowerCase() === 'y' || aboutMeQ3.toLowerCase() === 'yep') {
-//     alert('I sure did, for ten years in total.'); 
-//     // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
-// } else if(aboutMeQ3.toLowerCase() === 'no' || aboutMeQ3.toLowerCase() === 'n' || aboutMeQ3.toLowerCase() === 'nope') {
-//     alert('Yup, for about a decade, in fact.');
-//     // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
-// } else if(aboutMeQ3 === null || aboutMeQ3 === '' || typeof aboutMeQ3 === 'string') {
-//     alert('I\'ll tell you anyway: I lived there for just over a decade.');
-//     // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3);
-// }
 
-// var aboutMeQ4 = prompt('Do I like football?')
-// if(aboutMeQ4.toLowerCase() === 'yes' || aboutMeQ4.toLowerCase() === 'y' || aboutMeQ4.toLowerCase() === 'yep') {
-//     alert('It\'s all right, but I prefer racket sports.'); 
-//     // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
-// } else if(aboutMeQ4.toLowerCase() === 'no' || aboutMeQ4.toLowerCase() === 'n' || aboutMeQ4.toLowerCase() === 'nope') {
-//     alert('You\'re right, I prefer racket sports.');
-//     // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
-// } else if(aboutMeQ4 === null || aboutMeQ4 === '' || typeof aboutMeQ4 === 'string') {
-//     alert('Not a football fan either, huh? I prefer racket sports.');
-//     // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
-// }
+function questionThree(){
+   var aboutMeQ3 = prompt('Did I live in St. Petersburg, Russia?')
+   if(aboutMeQ3.toLowerCase() === 'yes' || aboutMeQ3.toLowerCase() === 'y' || aboutMeQ3.toLowerCase() === 'yep') {
+       alert('I sure did, for ten years in total.'); 
+       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
+   } else if(aboutMeQ3.toLowerCase() === 'no' || aboutMeQ3.toLowerCase() === 'n' || aboutMeQ3.toLowerCase() === 'nope') {
+       alert('Yup, for about a decade, in fact.');
+       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
+   } else if(aboutMeQ3 === null || aboutMeQ3 === '' || typeof aboutMeQ3 === 'string') {
+       alert('I\'ll tell you anyway: I lived there for just over a decade.');
+       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3);
+   }   
+}
 
-// var aboutMeQ5 = prompt('Is my son\'s name Alex?')
-// if(aboutMeQ5.toLowerCase() === 'yes' || aboutMeQ5.toLowerCase() === 'y' || aboutMeQ5.toLowerCase() === 'yep') {
-//     alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-//     // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
-// } else if(aboutMeQ5.toLowerCase() === 'no' || aboutMeQ5.toLowerCase() === 'n' || aboutMeQ5.toLowerCase() === 'nope') {
-//     alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-//     // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
-// } else if(aboutMeQ5 === null || aboutMeQ5 === '' || typeof aboutMeQ5 === 'string') {
-//     alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-//     // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
-// }
+function questionFour(){
+   var aboutMeQ4 = prompt('Do I like football?')
+   if(aboutMeQ4.toLowerCase() === 'yes' || aboutMeQ4.toLowerCase() === 'y' || aboutMeQ4.toLowerCase() === 'yep') {
+       alert('It\'s all right, but I prefer racket sports.'); 
+       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
+   } else if(aboutMeQ4.toLowerCase() === 'no' || aboutMeQ4.toLowerCase() === 'n' || aboutMeQ4.toLowerCase() === 'nope') {
+       alert('You\'re right, I prefer racket sports.');
+       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
+   } else if(aboutMeQ4 === null || aboutMeQ4 === '' || typeof aboutMeQ4 === 'string') {
+       alert('Not a football fan either, huh? I prefer racket sports.');
+       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
+   }   
+}
+
+function questionFive(){
+   var aboutMeQ5 = prompt('Is my son\'s name Alex?')
+   if(aboutMeQ5.toLowerCase() === 'yes' || aboutMeQ5.toLowerCase() === 'y' || aboutMeQ5.toLowerCase() === 'yep') {
+      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
+      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
+   } else if(aboutMeQ5.toLowerCase() === 'no' || aboutMeQ5.toLowerCase() === 'n' || aboutMeQ5.toLowerCase() === 'nope') {
+      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
+      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
+   } else if(aboutMeQ5 === null || aboutMeQ5 === '' || typeof aboutMeQ5 === 'string') {
+      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
+      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
+   }
+}
 
 // alert('Now, I\'ll give you four guesses to pick the right number.');
 
@@ -129,3 +138,11 @@ function questionOne(){
 getUserName (name);
 
 questionOne();
+
+questionTwo();
+
+questionThree();
+
+questionFour();
+
+questionFive();
