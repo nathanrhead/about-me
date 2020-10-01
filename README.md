@@ -8,6 +8,7 @@ A page about the author that starts with prompts for the visitor to complete, in
 
 * A math game where I read your mind.
 * A guessing game where you read my mind.
+* A list of the top ten Russian words by frequency and their translations into English.
 
 ### Author: Nathan Cox/seattle-201d68
 
@@ -27,7 +28,7 @@ A page about the author that starts with prompts for the visitor to complete, in
 
 * While single quotes may be the standard for JS, when you need to use an apostrophe in a string, you have to use double quotes to set off your string. [I’ve since learned about escaping the apostrophe with a backslash (e.g., Nathan\’s), but I find that approach rather unsightly. Duckett says you can just use double quotes, but CF says you can’t.]
 
-* Inline styling is confusing and prone to human error. I can see how the concept of "separation of concerns" came about. 
+* Inline styling is confusing and prone to human error. I can see how the concept of "separation of concerns" came about.
 
 * I was proud that I figured out, roughly, how to generate an even number randomly.
 
