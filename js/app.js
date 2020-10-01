@@ -72,31 +72,37 @@ if(aboutMeQ5.toLowerCase() === 'yes' || aboutMeQ5.toLowerCase() === 'y' || about
 
 alert('Now, I\'ll give you four guesses to pick the right number.');
 
-var numGuessAnswer = 15
+var numGuessAnswer = 15 
+// it didn't work to add this to the numGuessAnswer: || 'fifteen' with and else if of numGuess === numGuessAnswer. Why not?
 var i = 0
 
+//There's an infinite loop here when a string is entered by the user: it just returns the numGuess prompt. 
+//An empty string--just hitting the okay button without any input--returns 'Close, but no cigar.
 while(i < 4) {
-    var numGuess = prompt('How many siblings do you think I have?');
-    if(numGuess < numGuessAnswer && i < 3) {
-        alert('Close, but no cigar.');
+    var numGuess = Number(prompt('How many siblings do you think I have?'));
+    if(numGuess < numGuessAnswer && i < 3 && numGuess !== "") {
+        alert('Close, but no cigar. Try a higher number.');
         i++;
     } else if(numGuess > numGuessAnswer && i < 3) {
         alert('Watch you don\'t fly too close to the sun. Try a lower number.');
         i++;
-    } else if(numGuess === 15 || numGuess === '15' || numGuess.toLocaleLowerCase === 'fifteen') {
+    } else if(typeof numGuess === 'string' || numGuess === '' || numGuess === null) {
+        alert('Invalid input: Enter a number only.');
+        i++;
+    } else if(numGuess === numGuessAnswer) {
         alert('Nailed it. You\'re one smart cookie!');
         break;
-    } else if(i === 3 && numGuess !== 15) {
-        alert('Good try, but the correct number is 15. And now six chances to guess the answer to the final question:');
+    } else if(i === 3 && numGuess !== numGuessAnswer) {
+        alert('Good try, but the correct number is 15.');
         break;
     }
 }
 // None of this is last question is working, except for the prompt and the negative response.
 var lastQuestionAnswer = ['Franny and Zooey', 'Crime and Punishment', 'Master and Margarita'];
 
-for(var i = 0; i < 5; i++) {
-    var lastQuestion = prompt('What is my third-favorite book?');
-    if(lastQuestion.toLowerCase === 'franny and zooey' || lastQuestion.toLowerCase === 'crime and punishment' || lastQuestion.toLowerCase === 'master and margarita') {
+for(var i = 0; i < 6; i++) {
+    var lastQuestion = prompt('Last question: What is my third-favorite book?').toLowerCase();
+    if(lastQuestion === 'franny and zooey' || lastQuestion === 'crime and punishment' || lastQuestion === 'master and margarita') {
         alert('You guessed it!');
         break;
     } else if(i === 5 && lastQuestion !== lastQustionAnswer) {
