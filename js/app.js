@@ -10,6 +10,7 @@ function getUserName (){
        alert('Welcome, ' + userName.toUpperCase() + ', to my about-me site.');
        alert('Before we get started, let\'s see how much you already know about me.');
    }
+   return userName;
 }
 
 function questionOne(){
@@ -82,60 +83,65 @@ function questionFive(){
    }
 }
 
-// alert('Now, I\'ll give you four guesses to pick the right number.');
+function numberGame(){
+   alert('Now, I\'ll give you four guesses to pick the right number.');
 
-// var numGuessAnswer = 15 
-// // it didn't work to add this to the numGuessAnswer: || 'fifteen' with and else if of numGuess === numGuessAnswer. Why not?
-// var i = 0
+   var numGuessAnswer = 15 
+   // it didn't work to add this to the numGuessAnswer: || 'fifteen' with and else if of numGuess === numGuessAnswer. Why not?
+   var i = 0
+   
+   //There's an infinite loop here when a string is entered by the user: it just returns the numGuess prompt. 
+   //An empty string--just hitting the okay button without any input--returns 'Close, but no cigar.
+   while(i < 4) {
+       var numGuess = Number(prompt('How many siblings do you think I have?'));
+       i++
+       if(numGuess < numGuessAnswer && i < 4 && numGuess !== '') {
+           alert('Close, but no cigar. Try a higher number.');
+       } else if(numGuess > numGuessAnswer && i < 4) {
+           alert('Watch you don\'t fly too close to the sun. Try a lower number.');
+       } else if(typeof numGuess === 'string' || numGuess === '' || numGuess === null) {
+           alert('Invalid input: Enter a number only.');
+       } else if(numGuess === numGuessAnswer) {
+           alert('Nailed it. You\'re one smart cookie!');
+           break;
+       } else if(i === 4 && numGuess !== numGuessAnswer) {
+           alert('Good try, but the correct number is 15.');
+           break;
+       }
+   }   
+}
 
-// //There's an infinite loop here when a string is entered by the user: it just returns the numGuess prompt. 
-// //An empty string--just hitting the okay button without any input--returns 'Close, but no cigar.
-// while(i < 4) {
-//     var numGuess = Number(prompt('How many siblings do you think I have?'));
-//     if(numGuess < numGuessAnswer && i < 3 && numGuess !== "") {
-//         alert('Close, but no cigar. Try a higher number.');
-//         i++;
-//     } else if(numGuess > numGuessAnswer && i < 3) {
-//         alert('Watch you don\'t fly too close to the sun. Try a lower number.');
-//         i++;
-//     } else if(typeof numGuess === 'string' || numGuess === '' || numGuess === null) {
-//         alert('Invalid input: Enter a number only.');
-//         i++;
-//     } else if(numGuess === numGuessAnswer) {
-//         alert('Nailed it. You\'re one smart cookie!');
-//         break;
-//     } else if(i === 3 && numGuess !== numGuessAnswer) {
-//         alert('Good try, but the correct number is 15.');
-//         break;
-//     }
-// }
-// // None of this is last question is working, except for the prompt and the negative response.
-// var lastQuestionAnswer = ['Franny and Zooey', 'Crime and Punishment', 'Master and Margarita'];
+function finalQuestion(){
+// None of this is last question is working, except for the prompt and the negative response.
+   var lastQuestionAnswer = ['franny and zooey', 'crime and punishment', 'master and margarita'];
 
-// for(var i = 0; i < 6; i++) {
-//     var lastQuestion = prompt('Last question: What is my third-favorite book?').toLowerCase();
-//     if(lastQuestion === 'franny and zooey' || lastQuestion === 'crime and punishment' || lastQuestion === 'master and margarita') {
-//         alert('You guessed it!');
-//         break;
-//     } else if(i === 5 && lastQuestion !== lastQustionAnswer) {
-//         alert('The answer is one of three: Franny and Zooey, Crime and Punishment, or Master and Margarita.');
-//     } else if(lastQuestion !== lastQuestionAnswer[i]) {
-//         alert('No, but I\'ll look into that title.');
-//     }
-// }
-// alert('These were the possible answers: *Franny and Zooey*, *Crime and Punishment*, *Master and Margarita*.');
+   for(var i = 0; i < 6; i++) {
+    var lastQuestion = prompt('Last question: What is my third-favorite book?');
+    if(lastQuestion === 'franny and zooey' || lastQuestion === 'crime and punishment' || lastQuestion === 'master and margarita') {
+        alert('You guessed it!');
+        break;
+    } else if(i === 5 && lastQuestion !== lastQuestionAnswer) {
+        alert('The answer is one of three: Franny and Zooey, Crime and Punishment, or Master and Margarita.');
+    } else {
+        alert('No, but I\'ll look into that title.');
+    }
+   }
+   alert('These were the possible answers: *Franny and Zooey*, *Crime and Punishment*, *Master and Margarita*.');
+}
 
-// var loadPage = userName;
-
-// if(userName.toLowerCase() === 'no' || userName.toLowerCase() === 'n' || userName.toLowerCase() === 'nope' || userName === '') {
-//     loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + 'Pat.');
-
-// } else {
-//     loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + userName + '.'); 
-// }
+function farewellPrompt(name){
+   var loadPage = name;
+   if(name.toLowerCase() === 'no' || name.toLowerCase() === 'n' || name.toLowerCase() === 'nope' || name === '') {
+      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + 'Pat.');
+  
+  } else {
+      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + name + '.'); 
+  }
+  
+}
 
 
-getUserName (name);
+var name = getUserName();
 
 questionOne();
 
@@ -146,3 +152,9 @@ questionThree();
 questionFour();
 
 questionFive();
+
+numberGame();
+
+finalQuestion();
+
+farewellPrompt(name);
