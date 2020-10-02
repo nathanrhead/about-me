@@ -82,10 +82,10 @@ while(i < 4) {
     var numGuess = Number(prompt('How many siblings do you think I have?'));
     if(numGuess < numGuessAnswer && i < 3 && numGuess !== "") {
         alert('Close, but no cigar. Try a higher number.');
-        i++;
+    
     } else if(numGuess > numGuessAnswer && i < 3) {
         alert('Watch you don\'t fly too close to the sun. Try a lower number.');
-        i++;
+        
     } else if(typeof numGuess === 'string' || numGuess === '' || numGuess === null) {
         alert('Invalid input: Enter a number only.');
         i++;
