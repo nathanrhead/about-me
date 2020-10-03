@@ -57,30 +57,29 @@ function questionThree(){
 }
 
 function questionFour(){
-   var aboutMeQ4 = prompt('Do I like football?')
-   if(aboutMeQ4.toLowerCase() === 'yes' || aboutMeQ4.toLowerCase() === 'y' || aboutMeQ4.toLowerCase() === 'yep') {
-       alert('It\'s all right, but I prefer racket sports.'); 
-       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
-   } else if(aboutMeQ4.toLowerCase() === 'no' || aboutMeQ4.toLowerCase() === 'n' || aboutMeQ4.toLowerCase() === 'nope') {
-       alert('You\'re right, I prefer racket sports.');
-       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
+   var aboutMeQ4 = prompt('Do I like football?').toLowerCase();
+   if(aboutMeQ4 === 'yes' || aboutMeQ4 === 'y' || aboutMeQ4 === 'yep') {
+        answerCount = 0;
+        alert('It\'s all right, but I prefer racket sports. Advantage, author; Your score is ' + answerCount + ' of 5.'); 
+   } else if(aboutMeQ4 === 'no' || aboutMeQ4 === 'n' || aboutMeQ4 === 'nope') {
+        answerCount++;
+        alert('You\'re right, I prefer racket sports. Advantage out! Your score is ' + answerCount + ' out of 5.');
    } else if(aboutMeQ4 === null || aboutMeQ4 === '' || typeof aboutMeQ4 === 'string') {
-       alert('Not a football fan either, huh? I prefer racket sports.');
-       // console.log('This is the user\'s answer to Q4: ' + aboutMeQ4);
+        answerCount = 0;
+        alert('Not a football fan either, huh? I prefer racket sports. Add in: your score is' + answerCount + ' out of 5.');
    }   
 }
 
 function questionFive(){
-   var aboutMeQ5 = prompt('Is my son\'s name Alex?')
-   if(aboutMeQ5.toLowerCase() === 'yes' || aboutMeQ5.toLowerCase() === 'y' || aboutMeQ5.toLowerCase() === 'yep') {
-      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
-   } else if(aboutMeQ5.toLowerCase() === 'no' || aboutMeQ5.toLowerCase() === 'n' || aboutMeQ5.toLowerCase() === 'nope') {
-      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
+   var aboutMeQ5 = prompt('Is my son\'s name Alex?').toLowerCase();
+   if(aboutMeQ5 === 'yes' || aboutMeQ5 === 'y' || aboutMeQ5 === 'yep') {
+        answerCount++;
+        alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home. Another point for you, bring your total out of 5 to ' + answerCount + '.');
+   } else if(aboutMeQ5 === 'no' || aboutMeQ5 === 'n' || aboutMeQ5 === 'nope') {
+        answerCount++;
+        alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home. Another point for you, bring your total out of 5 to ' + answerCount + '.');
    } else if(aboutMeQ5 === null || aboutMeQ5 === '' || typeof aboutMeQ5 === 'string') {
-      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home.');
-      // console.log('This is the user\'s answer to Q5: ' + aboutMeQ6);
+      alert('Yes and no: his full name is Alexander, but he goes by Alex in first grade, and we call him Sasha at home. But a non-answer is a non-starter, so adding 0 to ' + answerCount + ' equals ' + answerCount + ' points out of 5.');
    }
 }
 
