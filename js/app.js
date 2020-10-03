@@ -6,7 +6,7 @@ function getUserName (){
        alert('No worries, we\'ll just call you Pat.');
        alert('Before we get started, let\'s see how much you already know about me.');
    } else if(typeof userName === "string" || typeof userName === !null) {
-       alert('Welcome, ' + userName + ', to my about-me site.');
+       alert('Welcome, ' + userName.toUpperCase() + ', to my about-me site.');
        alert('Before we get started, let\'s see how much you already know about me.');
     return userName;
     }
@@ -15,11 +15,11 @@ function getUserName (){
 var answerCount = 0;
 
 function questionOne(){
-   var aboutMeQ1 = prompt('Here is the first of five yes-or-no questions: Do I have a twin brother?')
-   if(aboutMeQ1.toLowerCase() === 'yes' || aboutMeQ1.toLowerCase() === 'y' || aboutMeQ1.toLowerCase() === 'yep') {
+   var aboutMeQ1 = prompt('Here is the first of five yes-or-no questions: Do I have a twin brother?').toLowerCase();
+   if(aboutMeQ1 === 'yes' || aboutMeQ1 === 'y' || aboutMeQ1 === 'yep') {
         answerCount++;
         alert('It\'s true, but we\'re dizygotic. That\'s ' + answerCount + ' correct and 5 to go.'); 
-    } else if(aboutMeQ1.toLowerCase() === 'no' || aboutMeQ1.toLowerCase() === 'n' || aboutMeQ1.toLowerCase() === 'nope') {
+    } else if(aboutMeQ1 === 'no' || aboutMeQ1 === 'n' || aboutMeQ1 === 'nope') {
         answerCount = 0;
         alert('Actually, it\'s true, I do, but we\'re dizygotic. You\'re ' + answerCount + ' for 5.');
    } else if(aboutMeQ1 === null || aboutMeQ1 === '' || typeof aboutMeQ1 === 'string') {
@@ -29,30 +29,30 @@ function questionOne(){
 }
 
 function questionTwo(){
-   var aboutMeQ2 = prompt('Is my favorite book *One Hundred Years of Solitude*, by Gabriel Garcia Marquez?')
-   if(aboutMeQ2.toLowerCase() === 'yes' || aboutMeQ2.toLowerCase() === 'y' || aboutMeQ2.toLowerCase() === 'yep') {
-       alert('Close! It\'s actually *Nine Stories*, by JD Salinger.'); 
-       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
-   } else if(aboutMeQ2.toLowerCase() === 'no' || aboutMeQ2.toLowerCase() === 'n' || aboutMeQ2.toLowerCase() === 'nope') {
-       alert('You\'re right, that\'s my second favorite book; my first is *Nine Stories*, by JD Salinger.');
-       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2)
+   var aboutMeQ2 = prompt('Is my favorite book *One Hundred Years of Solitude*, by Gabriel Garcia Marquez?').toLowerCase();
+   if(aboutMeQ2 === 'yes' || aboutMeQ2 === 'y' || aboutMeQ2 === 'yep') {
+        answerCount = 0;
+        alert('Close! It\'s actually *Nine Stories*, by JD Salinger. Your score is currently ' + answerCount + ' out of 5.'); 
+   } else if(aboutMeQ2 === 'no' || aboutMeQ2 === 'n' || aboutMeQ2 === 'nope') {
+        answerCount++;
+        alert('You\'re right, that\'s my second favorite book; my first is *Nine Stories*, by JD Salinger. Score is ' + answerCount + ' out of 5.');
    } else if(aboutMeQ2 === null || aboutMeQ2 === '' || typeof aboutMeQ2 === 'string') {
-       alert('I\'ll tell you anyway: While I love *One Hundred*, *Nine Stories*, by JD Salinger, is my favorite.')
-       // console.log('This is the user\'s answer to Q2: ' + aboutMeQ2);
+        answerCount = 0;
+        alert('I\'ll tell you anyway: While I love *One Hundred*, *Nine Stories*, by JD Salinger, is my favorite. Your score is ' + answerCount +'. Three more to go.');
    }   
 }
 
 function questionThree(){
-   var aboutMeQ3 = prompt('Did I live in St. Petersburg, Russia?')
-   if(aboutMeQ3.toLowerCase() === 'yes' || aboutMeQ3.toLowerCase() === 'y' || aboutMeQ3.toLowerCase() === 'yep') {
-       alert('I sure did, for ten years in total.'); 
-       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
-   } else if(aboutMeQ3.toLowerCase() === 'no' || aboutMeQ3.toLowerCase() === 'n' || aboutMeQ3.toLowerCase() === 'nope') {
-       alert('Yup, for about a decade, in fact.');
-       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3)
+   var aboutMeQ3 = prompt('Did I live in St. Petersburg, Russia?').toLowerCase();
+   if(aboutMeQ3 === 'yes' || aboutMeQ3 === 'y' || aboutMeQ3 === 'yep') {
+        answerCount++;
+        alert('I sure did, for ten years in total, making your score ' + answerCount + ' out of 5.'); 
+   } else if(aboutMeQ3 === 'no' || aboutMeQ3 === 'n' || aboutMeQ3 === 'nope') {
+        answerCount = 0;
+        alert('Yup, for about a decade, in fact. Speaking of numbers, your score is ' + answerCount + ' out of 5.');
    } else if(aboutMeQ3 === null || aboutMeQ3 === '' || typeof aboutMeQ3 === 'string') {
-       alert('I\'ll tell you anyway: I lived there for just over a decade.');
-       // console.log('This is the user\'s answer to Q3: ' + aboutMeQ3);
+        answerCount = 0; 
+        alert('I\'ll tell you anyway: I lived there for just over a decade.');
    }   
 }
 
