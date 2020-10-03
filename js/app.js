@@ -1,29 +1,30 @@
 'use strict';
 
 function getUserName (){
-   var userName = prompt('Please enter your name to continue.');
-   if(userName.toLowerCase() === 'no' || userName.toLowerCase() === 'n' || userName.toLowerCase() === 'nope' || userName === "") {
+   var userName = prompt('Please enter your name to continue.').toLowerCase();
+   if(userName === 'no' || userName === 'n' || userName === 'nope' || userName === "") {
        alert('No worries, we\'ll just call you Pat.');
-    // console.log('This is the user\'s name: ' + userName);
        alert('Before we get started, let\'s see how much you already know about me.');
-   } else if(typeof userName.toLowerCase() === "string" || typeof userName.toLowerCase === !null) {
-       alert('Welcome, ' + userName.toUpperCase() + ', to my about-me site.');
+   } else if(typeof userName === "string" || typeof userName === !null) {
+       alert('Welcome, ' + userName + ', to my about-me site.');
        alert('Before we get started, let\'s see how much you already know about me.');
-   }
-   return userName;
+    return userName;
+    }
 }
+
+var answerCount = 0;
 
 function questionOne(){
    var aboutMeQ1 = prompt('Here is the first of five yes-or-no questions: Do I have a twin brother?')
    if(aboutMeQ1.toLowerCase() === 'yes' || aboutMeQ1.toLowerCase() === 'y' || aboutMeQ1.toLowerCase() === 'yep') {
-      alert('It\'s true, but we\'re dizygotic.'); 
-    // console.log('This is the user\'s answer to Q1: ' + aboutMeQ1)
-   } else if(aboutMeQ1.toLowerCase() === 'no' || aboutMeQ1.toLowerCase() === 'n' || aboutMeQ1.toLowerCase() === 'nope') {
-      alert('Actually, it\'s true, I do, but we\'re dizygotic.');
-    // console.log('This is the user\'s answer to Q1: ' + aboutMeQ1)
+        answerCount++;
+        alert('It\'s true, but we\'re dizygotic. That\'s ' + answerCount + ' correct and 5 to go.'); 
+    } else if(aboutMeQ1.toLowerCase() === 'no' || aboutMeQ1.toLowerCase() === 'n' || aboutMeQ1.toLowerCase() === 'nope') {
+        answerCount = 0;
+        alert('Actually, it\'s true, I do, but we\'re dizygotic. You\'re ' + answerCount + ' for 5.');
    } else if(aboutMeQ1 === null || aboutMeQ1 === '' || typeof aboutMeQ1 === 'string') {
-    alert('I\'ll tell you anyway: I\'m a twin, but we\'re dizygotic.')
-    // console.log('This is the user\'s answer to Q1: ' + aboutMeQ1);
+        answerCount = 0;
+        alert('I\'ll tell you anyway: I\'m a twin, but we\'re dizygotic. You\'re ' + answerCount + ' for 5.')
    }
 }
 
@@ -89,9 +90,9 @@ function numberGame(){
    var numGuessAnswer = 15 
    // it didn't work to add this to the numGuessAnswer: || 'fifteen' with and else if of numGuess === numGuessAnswer. Why not?
    var i = 0
-   
-   //There's an infinite loop here when a string is entered by the user: it just returns the numGuess prompt. 
-   //An empty string--just hitting the okay button without any input--returns 'Close, but no cigar.
+   //Problems: 
+   //1. A string returns the numGuess prompt without any alerts. 
+   //2. An empty string--just hitting the okay button without any input--returns 'Close, but no cigar. . . .'
    while(i < 4) {
        var numGuess = Number(prompt('How many siblings do you think I have?'));
        i++
@@ -110,13 +111,11 @@ function numberGame(){
        }
    }   
 }
+var lastQuestionAnswer = ['franny and zooey', 'crime and punishment', 'master and margarita'];
 
 function finalQuestion(){
-// None of this is last question is working, except for the prompt and the negative response.
-   var lastQuestionAnswer = ['franny and zooey', 'crime and punishment', 'master and margarita'];
-
    for(var i = 0; i < 6; i++) {
-    var lastQuestion = prompt('Last question: What is my third-favorite book?');
+    var lastQuestion = prompt('Last question: What is my third-favorite book?').toLowerCase();
     if(lastQuestion === 'franny and zooey' || lastQuestion === 'crime and punishment' || lastQuestion === 'master and margarita') {
         alert('You guessed it!');
         break;
