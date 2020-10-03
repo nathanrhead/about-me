@@ -8,7 +8,7 @@ function getUserName (){
    } else if(typeof userName === "string" || typeof userName === !null) {
        alert('Welcome, ' + userName.toUpperCase() + ', to my about-me site.');
        alert('Before we get started, let\'s see how much you already know about me.');
-    return userName;
+    // return [userName];
     }
 }
 
@@ -52,7 +52,7 @@ function questionThree(){
         alert('Yup, for about a decade, in fact. Speaking of numbers, your score is ' + answerCount + ' out of 5.');
    } else if(aboutMeQ3 === null || aboutMeQ3 === '' || typeof aboutMeQ3 === 'string') {
         answerCount = 0; 
-        alert('I\'ll tell you anyway: I lived there for just over a decade.');
+        alert('I\'ll tell you anyway: I lived there for just over a decade, which brings your score to ' + answerCount + ' out of 5.');
    }   
 }
 
@@ -66,7 +66,7 @@ function questionFour(){
         alert('You\'re right, I prefer racket sports. Advantage out! Your score is ' + answerCount + ' out of 5.');
    } else if(aboutMeQ4 === null || aboutMeQ4 === '' || typeof aboutMeQ4 === 'string') {
         answerCount = 0;
-        alert('Not a football fan either, huh? I prefer racket sports. Add in: your score is' + answerCount + ' out of 5.');
+        alert('Not a football fan either, huh? I prefer racket sports. Add in: your score is ' + answerCount + ' out of 5.');
    }   
 }
 
@@ -84,10 +84,10 @@ function questionFive(){
 }
 
 function numberGame(){
-   alert('Now, I\'ll give you four guesses to pick the right number.');
+   alert('Now, I\'ll give you four guesses to pick the right number and put more points up on the board.');
 
-   var numGuessAnswer = 15 
-   // it didn't work to add this to the numGuessAnswer: || 'fifteen' with and else if of numGuess === numGuessAnswer. Why not?
+   var numGuessAnswer = 14 
+   // it didn't work to add this to the numGuessAnswer: || 'fourteen' with and else if of numGuess === numGuessAnswer. Why not?
    var i = 0
    //Problems: 
    //1. A string returns the numGuess prompt without any alerts. 
@@ -96,16 +96,17 @@ function numberGame(){
        var numGuess = Number(prompt('How many siblings do you think I have?'));
        i++
        if(numGuess < numGuessAnswer && i < 4 && numGuess !== '') {
-           alert('Close, but no cigar. Try a higher number.');
+            alert('Close, but no cigar. Try a higher number.');
        } else if(numGuess > numGuessAnswer && i < 4) {
            alert('Watch you don\'t fly too close to the sun. Try a lower number.');
        } else if(typeof numGuess === 'string' || numGuess === '' || numGuess === null) {
            alert('Invalid input: Enter a number only.');
        } else if(numGuess === numGuessAnswer) {
-           alert('Nailed it. You\'re one smart cookie!');
+            answerCount++;
+            alert('Nailed it. You\'re one smart cookie and you\'ve earned another point, bringing your total to ' + answerCount + '.');
            break;
        } else if(i === 4 && numGuess !== numGuessAnswer) {
-           alert('Good try, but the correct number is 15.');
+           alert('Good try, but the correct number is 14.');
            break;
        }
    }   
@@ -116,9 +117,11 @@ function finalQuestion(){
    for(var i = 0; i < 6; i++) {
     var lastQuestion = prompt('Last question: What is my third-favorite book?').toLowerCase();
     if(lastQuestion === 'franny and zooey' || lastQuestion === 'crime and punishment' || lastQuestion === 'master and margarita') {
-        alert('You guessed it!');
+        answerCount++;
+        alert('You guessed it, bringing your score to a grand total of ' + answerCount + '!');
         break;
     } else if(i === 5 && lastQuestion !== lastQuestionAnswer) {
+        answerCount = 0;
         alert('The answer is one of three: Franny and Zooey, Crime and Punishment, or Master and Margarita.');
     } else {
         alert('No, but I\'ll look into that title.');
@@ -127,19 +130,19 @@ function finalQuestion(){
    alert('These were the possible answers: *Franny and Zooey*, *Crime and Punishment*, *Master and Margarita*.');
 }
 
-function farewellPrompt(name){
-   var loadPage = name;
-   if(name.toLowerCase() === 'no' || name.toLowerCase() === 'n' || name.toLowerCase() === 'nope' || name === '') {
-      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + 'Pat.');
-  
-  } else {
-      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + name + '.'); 
-  }
-  
+// this function is returning "undefined."
+var name = getUserName();
+
+function farewellPrompt(name) {
+    var loadPage = name.toUpperCase();
+   if(name === 'NO' || name === 'N' || name === 'NOPE' || name === '') {
+      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + 'Pat. Your final score is ' + answerCount + '. Thanks for playing!');
+    } else {
+      loadPage = alert('Knowing is half the battle, as they say, and now you know all about me, ' + name.toUpperCase() + '. Your final score is ' + answerCount + '. Thanks for playing!'); 
+    }
 }
 
-
-var name = getUserName();
+getUserName();
 
 questionOne();
 
